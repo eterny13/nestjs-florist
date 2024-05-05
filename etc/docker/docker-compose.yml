@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoAdmin
+      MONGO_INITDB_ROOT_PASSWORD: mongoAdmin
+      MONGO_INITDB_DATABASE: florist
+      MONGODB_DATABASE: florist
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db/init:/docker-entrypoint-initdb.d
+
